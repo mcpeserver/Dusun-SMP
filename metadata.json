@@ -1,0 +1,6 @@
+{
+  "name": "Dusun SMP",
+  "description": "Website Resmi Dusun SMP - Server Minecraft Survival Economy bertema pedesaan tradisional Indonesia yang hangat, damai, dan penuh kebersamaan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

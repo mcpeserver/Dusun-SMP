@@ -1,0 +1,13 @@
+# Handle line endings automatically for files detected as text
+# and leave binary files untouched.
+* text=auto
+
+# Force LF on shell scripts and other key files
+*.sh text eol=lf
+*.bat text eol=crlf
+
+# Denote binary files
+*.png binary
+*.jpg binary
+*.webp binary
+*.ico binary
