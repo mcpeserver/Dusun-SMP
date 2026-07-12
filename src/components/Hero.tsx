@@ -20,7 +20,7 @@ export default function Hero() {
       {/* Background Hero Image with dark overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/hero-bg.webp"
+          src="/hero-bg.jpg"
           alt="Dusun SMP Minecraft Village Landscape"
           className="w-full h-full object-cover object-center scale-105"
           referrerPolicy="no-referrer"
@@ -53,7 +53,7 @@ export default function Hero() {
           {/* Soft glow indicator behind the logo */}
           <div className="absolute inset-0 -m-2 rounded-full bg-rice-gold/10 blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
           <img
-            src="/logo.png"
+            src="/logo.jpg"
             alt="Dusun SMP Official Logo"
             className="w-36 h-36 sm:w-44 sm:h-44 object-contain filter drop-shadow-[0_8px_24px_rgba(0,0,0,0.6)] relative z-10"
             referrerPolicy="no-referrer"

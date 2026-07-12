@@ -1,7 +1,17 @@
 import { siteConfig } from "../config/site";
 import { Users, MessageSquare, ArrowRight } from "lucide-react";
+import { DeveloperData } from "../types";
 
-export default function CommunitySection() {
+interface CommunitySectionProps {
+  devData: DeveloperData | null;
+}
+
+export default function CommunitySection({ devData }: CommunitySectionProps) {
+  // Ambil link secara dinamis dari API dengan fallback aman dari siteConfig
+  const discordLink = devData?.community.discord || siteConfig.links.discord;
+  const whatsappLink = devData?.community.website || siteConfig.links.whatsapp;
+  const communityName = devData?.community.name || "Komunitas Warga";
+
   return (
     <section id="community" className="py-20 bg-charcoal-base relative overflow-hidden">
       {/* Dynamic decorative backdrop blurs */}
@@ -44,7 +54,7 @@ export default function CommunitySection() {
 
               {/* Title & Desc */}
               <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#5865F2] transition-colors">
-                Discord Dusun SMP
+                Discord Warga
               </h3>
               <p className="text-gray-400 text-sm leading-relaxed mb-6">
                 Tempat berkumpul utama para warga. Ngobrol via voice channel saat bermain, berpartisipasi dalam sayembara dusun, melaporkan pemain yang melanggar aturan, atau mengajukan usulan ide pembangunan server.
@@ -53,7 +63,7 @@ export default function CommunitySection() {
 
             {/* Action Link */}
             <a
-              href={siteConfig.links.discord}
+              href={discordLink}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-between w-full mt-4 px-5 py-3 rounded-lg bg-[#5865F2] hover:bg-[#4752C4] text-white font-bold text-sm transition-all duration-300 shadow-md cursor-pointer"
@@ -78,21 +88,21 @@ export default function CommunitySection() {
 
               {/* Title & Desc */}
               <h3 className="text-xl font-bold text-white mb-2 group-hover:text-emerald-light transition-colors">
-                WhatsApp Grup Warga
+                Grup Komunitas Warga
               </h3>
               <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                Saluran chat super praktis yang diakses langsung dari handphone-mu. Sangat cocok untuk mengobrol santai sehari-hari, berdagang koin dusun secara kasual, mengirim foto screenshot bangunanmu, atau sekadar menyapa sesama warga.
+                Saluran resmi <strong className="text-white font-semibold">{communityName}</strong> yang praktis. Sangat cocok untuk mengobrol santai sehari-hari, berdagang koin dusun secara kasual, mengirim foto screenshot bangunanmu, atau sekadar menyapa sesama warga.
               </p>
             </div>
 
             {/* Action Link */}
             <a
-              href={siteConfig.links.whatsapp}
+              href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-between w-full mt-4 px-5 py-3 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm transition-all duration-300 shadow-md cursor-pointer"
             >
-              <span>Bergabung di WhatsApp</span>
+              <span>Kunjungi Media Komunitas</span>
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>

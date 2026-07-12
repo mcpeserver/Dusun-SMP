@@ -12,6 +12,8 @@ export interface DeveloperData {
   website: {
     portfolio: string;
   };
+  logo?: string;
+  hero_image?: string;
 }
 
 export interface McStatusData {
